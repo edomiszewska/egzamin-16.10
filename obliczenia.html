@@ -1,0 +1,66 @@
+<html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl2.css">
+    <title>Stacja paliw</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Całodobowa stacja paliw</h1>
+    </header>
+
+    <main>
+        <a href="stacja.html"><img src="home.png" alt="home"></a>
+        <a href="obliczenia.html"><img src="znak.png" alt="znak"></a>
+        <a href="kwerendy.txt">Pobierz dokumenty</a>
+    </main>
+
+   
+
+    <section>
+       <h2>Orientacyjny koszt paliwa</h2>
+       <label for="paliwo">Rodzaj paliwa(1-benzyna, 2-olej napędowy):</br>
+        <input type="number" name="paliwo" id="paliwo"></br>
+    </label>
+
+
+    <label for="litry">Ile litrów?</br>
+        <input type="number" name="litry" id="litry">
+    </label></br>
+
+
+        <button id="calculateButton">OBLICZ</button>
+        <p id="result"></p>
+</section>
+<aside>
+    <img src="samochod.png" alt="samochod" id="samochod">
+</aside>
+    <footer>
+        <p>Stronę opracował: nr 7</p>
+    </footer>
+<script>
+  document.getElementById('calculateButton').addEventListener('click', function() {
+         
+            const paliwo = parseInt(document.getElementById('paliwo').value);
+            const litry = parseFloat(document.getElementById('litry').value);
+            let koszt = 0;
+
+          
+            if (paliwo === 1) {
+                koszt = litry * 4;
+            } else if (paliwo === 2) {
+                koszt = litry * 3.5;
+            }
+
+           
+            document.getElementById('result').innerText = `Koszt paliwa: ${koszt} zł`;
+        });
+
+
+</script>
+
+
+</html>
